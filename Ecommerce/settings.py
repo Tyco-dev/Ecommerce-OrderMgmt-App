@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from django.conf.locale.en import formats as en_formats
+from django.conf.locale.fr import formats as fr_formats
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+en_formats.DATETIME_FORMAT = "%Y-%m-%d-%H:%M"
+fr_formats.DATETIME_FORMAT = "%Y-%m-%d-%H:%M"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -27,6 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -46,6 +51,9 @@ INSTALLED_APPS = [
 
     # Local
     'store',
+
+    # Third Party
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +135,6 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -3,6 +3,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils.text import slugify
 
+
 # Create your models here.
 
 
@@ -53,16 +54,28 @@ class Item(models.Model):
             'slug': self.slug
         })
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Item, self).save(*args, **kwargs)
+    def get_add_to_cart_url(self):
+        return reverse("store:add_to_cart", kwargs={
+            'slug': self.slug
+        })
+
+    def get_remove_from_cart_url(self):
+        return reverse("store:remove_from_cart", kwargs={
+            'slug': self.slug
+        })
 
 
 class OrderItem(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    ordered = models.BooleanField(default=False)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.title
+        return f"{self.quantity} of {self.item.title}"
+
+    def get_total_item_price(self):
+        return self.quantity * self.item.price
 
 
 class Order(models.Model):
@@ -70,4 +83,13 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
+    delivery_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
+
+    def get_total(self):
+        total = 0
+        for order_item in self.items.all():
+            total += order_item.get_total_item_price()
+        # if self.coupon:
+        #     total -= self.coupon.amount
+        return total
