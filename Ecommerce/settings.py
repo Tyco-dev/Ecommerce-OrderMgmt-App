@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from distutils.command.config import config
+
 from django.conf.locale.en import formats as en_formats
 from django.conf.locale.fr import formats as fr_formats
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,6 +29,9 @@ SECRET_KEY = '0y89s(^+mp9z7rhxk#qvuweel6r@pi(8v5*v0r_i@pa*m-@qr&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+STRIPE_PUBLIC_KEY = 'pk_live_51G7Sz2DoG1w3WwKV73ulTO4XOzEew0C7iHAKx0Y5DzYE3X5uvbRB67sxLmBZIpJEM9EplrXbkRZDqTL2OttgHrxs00Fw6QTfxy'
+STRIPE_SECRET_KEY = 'sk_test_NU2zeox1Zxv5qqsGNmjVG4gf007FTH1M3U'
 
 ALLOWED_HOSTS = []
 
@@ -54,6 +59,8 @@ INSTALLED_APPS = [
 
     # Third Party
     'crispy_forms',
+    'localflavor',
+
 ]
 
 MIDDLEWARE = [

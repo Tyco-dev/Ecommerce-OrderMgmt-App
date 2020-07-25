@@ -5,20 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecommerce/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_in_env/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_in_env/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/migrations/0002_auto_20200723_0930.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/migrations/0003_auto_20200723_0958.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/migrations/0004_auto_20200723_1004.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/migrations/0005_item_slug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/migrations/0006_auto_20200723_1910.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0002_auto_20200724_2107.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/migrations/0003_auto_20200724_2108.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/store/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/catalog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/store/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/checkout-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/checkout-page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +97,8 @@
       <updated>1595500399505</updated>
       <workItem from="1595500444975" duration="17408000" />
       <workItem from="1595589095567" duration="6150000" />
-      <workItem from="1595619830281" duration="11860000" />
+      <workItem from="1595619830281" duration="12133000" />
+      <workItem from="1595675470660" duration="19866000" />
     </task>
     <servers />
   </component>
@@ -111,9 +106,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1595620370120">
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1595683858343">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/2560.230.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595620370120" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/2560.230.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595683858343" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1595683858343">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/2560.230.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595683858343" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595683858343">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.230.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595683858343" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1595675472267">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/2560.230.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595675472267" />
   </component>
 </project>

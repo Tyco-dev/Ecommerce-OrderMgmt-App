@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 from django.utils.text import slugify
+from localflavor.us.models import USStateField
 
 
 # Create your models here.
@@ -83,8 +84,10 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
-    delivery_date = models.DateTimeField()
+    delivery_date = models.DateField(null=True)
     ordered = models.BooleanField(default=False)
+    billing_address = models.ForeignKey('BillingAddress', on_delete=models.SET_NULL, blank=True, null=True)
+    payment = models.ForeignKey('Payment', on_delete=models.SET_NULL, blank=True, null=True)
 
     def get_total(self):
         total = 0
@@ -93,3 +96,25 @@ class Order(models.Model):
         # if self.coupon:
         #     total -= self.coupon.amount
         return total
+
+
+class BillingAddress(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    phone_number = models.CharField(max_length=100, blank=True, null=True)
+    street_address = models.CharField(max_length=100)
+    suite_address = models.CharField(max_length=100)
+    state = USStateField()
+    zip = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Payment(models.Model):
+    stripe_charge_id = models.CharField(max_length=50)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True)
+    amount = models.FloatField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.username
